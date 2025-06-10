@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Siswa extends Model
 {
     protected $fillable=[
-        'user_is',
+        'user_id',
         'nis',
         'address',
         'phone',

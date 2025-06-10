@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('nis');
+            $table->string('nis')->unique();
             $table->string('address');
-            $table->string('phone');
+            $table->string('phone')->unique();
             $table->enum('class', ['X', 'XI', 'XII']);
             $table->foreignId('major_id')->constrained('majors')->onDelete('cascade');
             $table->timestamps();
