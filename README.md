@@ -1,1 +1,1 @@
-[Postman Collection - My Workspace](https://postman.co/workspace/My-Workspace~50a8f57e-f4e0-426a-852c-976e279f0aec/collection/37930680-accd39e4-198f-482b-ae3a-e08b0d2572b1?action=share&creator=37930680)
+[Postman Collection - My Workspace](https://grey-firefly-410439.postman.co/workspace/My-Workspace~50a8f57e-f4e0-426a-852c-976e279f0aec/collection/37930680-accd39e4-198f-482b-ae3a-e08b0d2572b1?action=share&creator=37930680)
