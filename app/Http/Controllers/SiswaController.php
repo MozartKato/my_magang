@@ -16,8 +16,17 @@ class SiswaController extends Controller
         $siswa = Siswa::where('user_id', $user->id)->first();
 
         return response()->json([
-            'user' => $user,
-            'siswa' => $siswa,
+            'status' => 'success',
+            'data' => [
+                'name' => $user->name,
+                'email' => $user->email,
+                'role' => $user->role,
+                'user_id' => $siswa->user_id,
+                'address' => $siswa->address,
+                'phone' => $siswa->phone,
+                'class' => $siswa->class,
+                'major_id' => $siswa->major_id
+            ]
         ]);
     }
 }
