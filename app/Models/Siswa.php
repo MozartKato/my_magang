@@ -14,4 +14,9 @@ class Siswa extends Model
         'class',
         'major_id',
     ];
+
+    public function major()
+    {
+        return $this->belongsTo(Major::class);
+    }
 }
