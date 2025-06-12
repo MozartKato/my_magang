@@ -1,18 +1,19 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\StudentController;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
 //auth routes
-Route::post('/register',[AuthController::class,'registerSiswa']);
+Route::post('/register',[AuthController::class,'registerStudent']);
 Route::post('/login', [AuthController::class,'login']);
 
-//siswa routes
-Route::middleware(['auth:sanctum',RoleMiddleware::class.':siswa'])->group(function(){
-    Route::get('/siswa/profile',[SiswaController::class,'profile']);
-    Route::get('/siswa/intern-place/{major_id?}',[SiswaController::class,'showInternPlace']);
+//student routes
+Route::middleware(['auth:sanctum',RoleMiddleware::class.':student'])->group(function(){
+    Route::get('/student/profile',[StudentController::class,'profile']);
+    Route::get('/student/intern-place',[StudentController::class,'showInternPlace']);
+    Route::post('/student/apply-intern',[StudentController::class,'applyIntern']);
 });

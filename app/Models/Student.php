@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Siswa extends Model
+class Student extends Model
 {
-    protected $fillable=[
+    protected $table = 'students';
+
+    protected $fillable = [
         'user_id',
         'nis',
         'address',
@@ -15,8 +17,13 @@ class Siswa extends Model
         'major_id',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function major()
     {
         return $this->belongsTo(Major::class);
     }
-}
+} 

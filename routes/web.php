@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route ke halaman home
 Route::get('/', function () {
-    return view('dashbord.home');
+    return view('welcome');
 });
 
 // Route ke halaman register
@@ -17,13 +17,15 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-// (Opsional) Route dashboard per role
+// Dashboard routes
+Route::get('/dashboard/student', function () {
+    return view('dashboard.student');
+});
+
+Route::get('/dashboard/teacher', function () {
+    return view('dashboard.teacher');
+});
+
 Route::get('/dashboard/admin', function () {
-    return view('dashbord.admin');
-});
-Route::get('/dashboard/guru', function () {
-    return view('dashbord.guru');
-});
-Route::get('/dashboard/siswa', function () {
-    return view('dashbord.siswa');
+    return view('dashboard.admin');
 });

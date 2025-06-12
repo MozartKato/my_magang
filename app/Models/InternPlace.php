@@ -8,7 +8,6 @@ class InternPlace extends Model
 {
     protected $fillable = [
         'name',
-        'major_id',
         'address'
     ];
 }

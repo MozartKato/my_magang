@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('intern_places', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->foreignId('major_id')->constrained('majors');
             $table->string('address');
             $table->timestamps();
         });

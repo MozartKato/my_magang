@@ -13,13 +13,20 @@ return new class extends Migration
     {
         Schema::create('intern_applies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('siswa_id')->constrained('siswas');
-            $table->foreignId('major_id')->constrained('majors');
-            $table->string('intern_place_name');
-            $table->foreign('intern_place_name')->references('name')->on('intern_places');
+            $table->foreignId('student_id')->constrained('students');
+            $table->foreignId('intern_place_id')->constrained('intern_places');
             $table->string('group_code')->nullable();
             $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->boolean('is_leader')->default(false);
+            $table->text('rejection_reason')->nullable();
+            $table->timestamp('accepted_at')->nullable();
+            $table->timestamp('rejected_at')->nullable();
             $table->timestamps();
+
+            // Indexes
+            $table->index('group_code');
+            $table->index('status');
+            $table->unique(['student_id', 'intern_place_id']); // Mencegah duplikasi pendaftaran
         });
     }
 
