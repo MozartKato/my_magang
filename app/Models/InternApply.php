@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 
 class InternApply extends Model
@@ -12,7 +11,7 @@ class InternApply extends Model
         'group_code',
         'status',
         'is_leader',
-        'rejection_reason'
+        'rejection_reason',
     ];
 
     public function student()

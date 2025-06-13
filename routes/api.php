@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InternController;
 use App\Http\Controllers\StudentController;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Http\Request;
@@ -16,4 +17,9 @@ Route::middleware(['auth:sanctum',RoleMiddleware::class.':student'])->group(func
     Route::get('/student/profile',[StudentController::class,'profile']);
     Route::get('/student/intern-place',[StudentController::class,'showInternPlace']);
     Route::post('/student/apply-intern',[StudentController::class,'applyIntern']);
+});
+
+//admin routes
+Route::middleware(['auth:sanctum',RoleMiddleware::class.':admin'])->group(function(){
+    Route::get('/admin/all-intern',[InternController::class,'showAllInternApply']);
 });
